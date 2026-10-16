@@ -26,4 +26,6 @@ O HyperFrames Student Kit continua em `C:\Users\SEU-USUARIO\hyperframes-student-
 - `/agente-video-mao-de-vaca`: edita vídeo mão de vaca (caro x barato), com fotos e preços pesquisados pelo Firecrawl.
 - `/agente-video-destampando`: edita vídeo destampando (NUNCA x certo, tarjas que somem conforme a fala), só texto.
 - `/agente-video-problema-solucao`: edita vídeo problema e solução (a mesma pessoa duas vezes, errado na esquerda x certo na direita), juntando as duas gravações num cenário só.
-- `/agente-classificacao`, `/agente-contraste`, `/agente-preguicoso`, `/agente-mao-de-vaca`, `/agente-destampando`, `/agente-problema-solucao`, `/agente-viral`: geram ideias e roteiros.
+- `/agente-video-edicao-magnetica`: edita vídeo de pessoa falando com gancho nos 3 primeiros segundos, cortes fluidos, zoom de aproximar e afastar, cor e som que passam a emoção de cada momento (tensão em preto e branco), letras flutuantes de destaque, emojis e imagens pequenas ligadas à fala, efeitos sonoros e legenda dinâmica.
+- `/agente-video-avaliacao`: edita vídeo de avaliação (produtos numa escala de 3 níveis verde, amarelo e vermelho, foto entrando no nível na hora da nota), com fotos do Firecrawl.
+- `/agente-classificacao`, `/agente-contraste`, `/agente-preguicoso`, `/agente-mao-de-vaca`, `/agente-destampando`, `/agente-problema-solucao`, `/agente-avaliacao`, `/agente-viral`: geram ideias e roteiros.

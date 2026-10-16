@@ -18,13 +18,11 @@ exec 9>"$REPO/.git/sincronizar.lock" 2>/dev/null
 command -v flock >/dev/null && { flock -n 9 || exit 0; }
 
 # 1. Copiar (espelho: o que foi apagado lá some aqui também)
-for s in agente-video-classificacao agente-video-contraste agente-video-mao-de-vaca agente-video-destampando; do
-  [ -d "$SKILLS/$s" ] || continue
-  rm -rf "skills/$s"; mkdir -p skills; cp -r "$SKILLS/$s" "skills/$s"
-done
-# Skills novas de edição que aparecerem com o mesmo prefixo
+# Todas as skills de edição (agente-video-*), sempre copiadas de novo pra pegar qualquer mudança
+mkdir -p skills
 for d in "$SKILLS"/agente-video-*; do
-  s=$(basename "$d"); [ -d "skills/$s" ] || cp -r "$d" "skills/$s"
+  [ -d "$d" ] || continue
+  s=$(basename "$d"); rm -rf "skills/$s"; cp -r "$d" "skills/$s"
 done
 rm -rf memoria; mkdir -p memoria; cp "$MEMORIA"/*.md memoria/ 2>/dev/null
 cp "$CLAUDEMD" CLAUDE-app-edicao.md 2>/dev/null
@@ -34,7 +32,7 @@ KIT="/c/Users/SEU-USUARIO/hyperframes-student-kit"
 mkdir -p fontes; cp "$KIT"/assets/fonts/* fontes/ 2>/dev/null
 
 # Projetos de referência que as skills usam como modelo: só design, cortes e sons (sem vídeo)
-for p in palavras-traumatizam vende-ou-viraliza mao-de-vaca-edicao destampando-0004; do
+for p in palavras-traumatizam vende-ou-viraliza mao-de-vaca-edicao destampando-0004 contraste-4644 problema-solucao-gravar avaliacao-5332 editado-por-ia; do
   src="$KIT/video-projects/$p"; [ -d "$src" ] || continue
   mkdir -p "referencias/$p/assets/sfx"
   for f in index.html DESIGN.md cuts.json meta.json; do [ -f "$src/$f" ] && cp "$src/$f" "referencias/$p/"; done

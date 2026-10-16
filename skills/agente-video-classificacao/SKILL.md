@@ -101,7 +101,9 @@ Crie uma lista de tarefas com os 10 passos e vá marcando.
 
 10. Versão final
    - Renderizar em qualidade alta (`-q high -w 1`).
-   - Copiar pra Área de Trabalho como <nome-curto-do-video>-v1.mp4 (se já existir, usar v2, v3...).
+   - Entregar a cópia final JÁ SEM METADADOS (em vez de só copiar): salvar em C:\Users\SEU-USUARIO\Documents\projetos\app-edicao\02-finais como <nome-curto-do-video>-v1.mp4 (se já existir, usar v2, v3...) com o comando abaixo. Ele tira a marca do HyperFrames (hyperframes_renderer, hyperframes_version), a assinatura do codificador (Lavf, x264) e qualquer outro metadado, sem perder qualidade (não recodifica):
+     `ffmpeg -i renders/<final>.mp4 -map 0 -c copy -map_metadata -1 -map_chapters -1 -bsf:v filter_units=remove_types=6 -fflags +bitexact -flags:v +bitexact -flags:a +bitexact -metadata:s:v handler_name= -metadata:s:a handler_name= -movflags +faststart <pasta 02-finais>/<nome-curto-do-video>-v1.mp4`
+   - Conferir: `grep -a -c -E "hyperframes|x264 - core|Lavf" <arquivo final>` tem que dar 0.
 
 ## Layout da tela (1080x1920)
 - Título: no topo, centralizado, entre mais ou menos 190 e 400 px de altura (abaixo da área do relógio e da câmera do Instagram). Até 2 linhas.

@@ -81,7 +81,9 @@ Crie uma lista de tarefas com os 9 passos e vá marcando.
    - Renderizar em qualidade alta (`-q high -w 1`).
 
 9. Entregar o arquivo
-   - Copiar pra C:\Users\SEU-USUARIO\Documents\projetos\app-edicao\02-finais como <nome-curto-do-video>-v1.mp4 (se já existir, usar v2, v3...).
+   - Entregar a cópia final JÁ SEM METADADOS (em vez de só copiar): salvar em C:\Users\SEU-USUARIO\Documents\projetos\app-edicao\02-finais como <nome-curto-do-video>-v1.mp4 (se já existir, usar v2, v3...) com o comando abaixo. Ele tira a marca do HyperFrames (hyperframes_renderer, hyperframes_version), a assinatura do codificador (Lavf, x264) e qualquer outro metadado, sem perder qualidade (não recodifica):
+     `ffmpeg -i renders/<final>.mp4 -map 0 -c copy -map_metadata -1 -map_chapters -1 -bsf:v filter_units=remove_types=6 -fflags +bitexact -flags:v +bitexact -flags:a +bitexact -metadata:s:v handler_name= -metadata:s:a handler_name= -movflags +faststart <pasta 02-finais>/<nome-curto-do-video>-v1.mp4`
+   - Conferir: `grep -a -c -E "hyperframes|x264 - core|Lavf" <arquivo final>` tem que dar 0.
    - Salvar a tabela dos pares e a legenda do post em C:\Users\SEU-USUARIO\Documents\projetos\app-edicao\03-roteiros\<nome-curto-do-video>.md.
 
 ## Câmera balançando

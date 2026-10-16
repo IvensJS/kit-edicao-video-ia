@@ -1,6 +1,6 @@
 # Kit de edição de vídeo com IA (Claude Code)
 
-5 skills do Claude Code que editam vídeos curtos pro Instagram, TikTok e Shorts sozinhas, do vídeo bruto até o arquivo final: cortam as pausas, transcrevem a fala, montam o design, colocam efeitos e renderizam em 1080x1920.
+7 skills do Claude Code que editam vídeos curtos pro Instagram, TikTok e Shorts sozinhas, do vídeo bruto até o arquivo final: cortam as pausas, transcrevem a fala, montam o design, colocam efeitos e renderizam em 1080x1920. O vídeo final sai sem metadados.
 
 | Comando | Formato |
 | --- | --- |
@@ -9,12 +9,14 @@
 | `/agente-video-mao-de-vaca` | Produto caro x produto barato, com foto e preço pesquisados na internet |
 | `/agente-video-destampando` | NUNCA x certo, com tarjas que somem linha a linha conforme a fala |
 | `/agente-video-problema-solucao` | A mesma pessoa duas vezes na tela (Amador x Profissional), juntando duas gravações num cenário só |
+| `/agente-video-avaliacao` | Produtos numa escala de 3 níveis (verde, amarelo e vermelho), com a foto entrando no nível na hora da nota; aceita várias rodadas no mesmo vídeo |
+| `/agente-video-edicao-magnetica` | Pessoa falando pra câmera com edição de retenção: gancho nos 3 primeiros segundos, cortes fluidos, zoom no momento certo, cor que muda com a emoção, letras em destaque, emojis e efeitos sonoros |
 
 ## O que tem aqui
 
 | Pasta | O que é | Pra onde vai |
 | --- | --- | --- |
-| `skills/` | As 5 skills (e o script que trata as fotos dos produtos) | `.claude/skills/` da sua pasta de usuário |
+| `skills/` | As 7 skills (e o script que trata as fotos dos produtos) | `.claude/skills/` da sua pasta de usuário |
 | `fontes/` | Poppins (700, 800, 900) e Lilita One | `hyperframes-student-kit/assets/fonts/` |
 | `modelos/` | Projetos de exemplo que as skills usam como modelo de design | `hyperframes-student-kit/video-projects/` |
 | `CLAUDE.md` | Regras da pasta de trabalho (onde ficam os vídeos brutos, finais e roteiros) | `Documents/projetos/app-edicao/CLAUDE.md` |
@@ -47,3 +49,5 @@ Depois:
 - Os caminhos dentro das skills estão como `C:\Users\SEU-USUARIO\...`. A troca pelo seu usuário (passo de instalação acima) é obrigatória. No Mac, o Claude ajusta também o formato do caminho.
 - Os vídeos ficam no seu computador: nada é enviado pra cá.
 - As fontes Poppins e Lilita One são do Google Fonts, com licença livre SIL Open Font License 1.1.
+- A edição magnética usa emojis: no Windows a skill copia a fonte de emoji do próprio sistema pro projeto; no Mac ela usa a Noto Color Emoji (Google Fonts, licença livre).
+- Música de fundo não entra: a ideia é escolher um áudio em alta direto no app na hora de postar.
