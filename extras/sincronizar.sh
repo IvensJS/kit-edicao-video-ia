@@ -24,6 +24,11 @@ for d in "$SKILLS"/agente-video-*; do
   [ -d "$d" ] || continue
   s=$(basename "$d"); rm -rf "skills/$s"; cp -r "$d" "skills/$s"
 done
+# Skill que saiu das ativas some de skills/ aqui também
+for d in skills/agente-video-*; do [ -d "$SKILLS/$(basename "$d")" ] || rm -rf "$d"; done
+# Skills em pausa (guardadas fora das ativas, pra voltar quando o usuário pedir)
+PAUSA="/c/Users/SEU-USUARIO/.claude/skills-em-pausa"
+rm -rf skills-em-pausa; [ -d "$PAUSA" ] && cp -r "$PAUSA" skills-em-pausa
 rm -rf memoria; mkdir -p memoria; cp "$MEMORIA"/*.md memoria/ 2>/dev/null
 cp "$CLAUDEMD" CLAUDE-app-edicao.md 2>/dev/null
 
